@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/login.css"> <!-- You can link a separate stylesheet if needed -->
+    <title>Login and Signup Page</title>
+</head>
+<body>
+
+<div class="form-modal">
+    <div class="form-toggle">
+        <button id="login-toggle" onclick="toggleLogin()">Log In</button>
+        <button id="signup-toggle" onclick="toggleSignup()">Sign Up</button>
+    </div>
+
+    <div id="login-form">
+        <form>
+            <input type="text" placeholder="Enter email or username"/>
+            <input type="password" placeholder="Enter password"/>
+            <button type="button" class="btn login">Login</button>
+            <p><a href="javascript:void(0)">Forgotten account</a></p>
+            <hr/>
+            <button type="button" class="btn -box-sd-effect"> <i class="fa fa-google fa-lg" aria-hidden="true"></i> Sign in with Google</button>
+            <button type="button" class="btn -box-sd-effect"> <i class="fa fa-linkedin fa-lg" aria-hidden="true"></i> Sign in with LinkedIn</button>
+            <button type="button" class="btn -box-sd-effect"> <i class="fa fa-windows fa-lg" aria-hidden="true"></i> Sign in with Microsoft</button>
+        </form>
+    </div>
+
+    <div id="signup-form">
+        <form>
+            <input type="email" placeholder="Enter your email"/>
+            <input type="text" placeholder="Choose username"/>
+            <input type="password" placeholder="Create password"/>
+            <button type="button" class="btn signup">Create Account</button>
+            <p>Clicking <strong>Create Account</strong> means that you agree to our <a href="javascript:void(0)">Terms of Services</a>.</p>
+            <hr/>
+            <button type="button" class="btn -box-sd-effect"> <i class="fa fa-google fa-lg" aria-hidden="true"></i> Sign up with Google</button>
+            <button type="button" class="btn -box-sd-effect"> <i class="fa fa-linkedin fa-lg" aria-hidden="true"></i> Sign up with LinkedIn</button>
+            <button type="button" class="btn -box-sd-effect"> <i class="fa fa-windows fa-lg" aria-hidden="true"></i> Sign up with Microsoft</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    function toggleLogin() {
+        document.getElementById("login-form").style.display = "block";
+        document.getElementById("signup-form").style.display = "none";
+    }
+
+    function toggleSignup() {
+        document.getElementById("login-form").style.display = "none";
+        document.getElementById("signup-form").style.display = "block";
+    }
+</script>
+
+</body>
+</html>

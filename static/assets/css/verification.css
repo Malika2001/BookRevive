@@ -1,0 +1,346 @@
+
+  .verification-box {
+    position: relative;
+    background-color: #ffffff;
+    padding: 60px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 400px;
+    height: 260px;
+    overflow: hidden; 
+    
+    /* Ensures that the shapes do not overflow outside the box */
+  }
+
+  .circle-large,
+  .circle-small,
+  .triangle {
+    position: absolute;
+  }
+
+  .circle-large {
+    width: 130px; /* Smaller size */
+    height: 130px; /* Smaller size */
+    background-color: #003366;
+    border-radius: 40%;
+    top: -75px; /* Adjusted position */
+    left: -75px; /* Adjusted position */
+  }
+
+  .circle-small {
+    width: 100px; /* Smaller size */
+    height: 100px; /* Smaller size */
+    background-color: #003366;
+    border-radius: 50%;
+    bottom: -25px; /* Adjusted position */
+    right: -25px; /* Adjusted position */
+  }
+
+  .triangle {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent; /* Smaller size */
+    border-right: 20px solid transparent; /* Smaller size */
+    border-bottom: 40px solid #003366; /* Smaller size */
+    top: 60px; /* Adjusted position */
+    left: 20px; /* Adjusted position */
+    transform: rotate(45deg);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .verify-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0px;
+    padding: 10px 50px;
+    background-color: #003366;
+    color: #fff;
+    border: 2px solid #d4d4d4;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    max-width: 250px;
+    height: 50px;
+    margin: 20px auto;
+    border-radius: 20px;
+  }
+
+  .verify-button:hover {
+    background-color: #003366;
+  }
+
+  .footer-text {
+    font-size: 12px;
+    color: #666;
+    margin-top: 30px;
+  }
+  #_checkbox {
+    display: none;
+}
+
+label {
+    display: block;
+    position: relative;
+    width: 40px;
+    height: 25px;
+    background-color: #f1eded;
+    border-radius: 50%;
+    border: 2px solid #7e7b7b;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+label:hover {
+    background-color: #f1eded;
+}
+
+label:active {
+    transform: scale(0.9);
+}
+
+#tick_mark {
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    width: 20px;
+    height: 12.5px;
+    margin-top: -5px; /* Adjust these margins to center the tick */
+    margin-left: -10px;
+    transform: scale(0) rotate(45deg);
+    transition: transform 0.3s ease;
+}
+
+#tick_mark:before, #tick_mark:after {
+    content: "";
+    position: absolute;
+    background-color: #fff;
+}
+
+#tick_mark:before {
+    left: 0;
+    bottom: 0;
+    width: 10px;
+    height: 2px;
+}
+
+#tick_mark:after {
+    left: 8px;
+    bottom: 0;
+    width: 2px;
+    height: 15px;
+}
+
+#_checkbox:checked + label {
+    background-color: #07d410;
+}
+
+#_checkbox:checked + label #tick_mark {
+    transform: scale(1) rotate(45deg);
+}
+
+  .checkbox {
+    display: inline-block;
+    width: 30px;
+    height: 40px;
+    background-color: #fff;
+    border: 1px solid #d4d4d4d0;
+    border-radius: 2px;
+    margin-right: 10px;
+  }
+  .verify-image {
+   
+    background-image: url('/assets/img/logo.png'); /* Replace with your image path */
+    background-size: contain;
+    /* Set image width */
+    height: 50px; /* Set image height */
+     /* Circle shape */
+    
+    background-repeat: no-repeat;
+    margin-left: 10px;
+    margin-top: 10px;
+     
+  }
+  .text-container {
+    position: absolute;
+    bottom: 20px; /* Distance from bottom */
+    left: 20px; /* Distance from left */
+    text-align: left;
+  }
+
+  /* You may want to adjust your h1 and p styles as well */
+  h1 {
+    margin: 0;
+    font-size: 20px; /* Adjust font size as needed */
+    color: #000; /* Adjust text color as needed */
+  }
+
+  p {
+    margin: 0;
+    font-size: 10px; /* Adjust font size as needed */
+    color: #666; /* Adjust text color as needed */
+  }
+  
+  .verify-image-container {
+    display: inline-block;
+    background-color: #ffffff; /* White background */
+    padding: 5px; /* Padding around the image for the white background effect */
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    height: 61px;
+    width: 80px;
+    overflow: hidden;
+
+    margin-right: -50px;
+
+  }
+  .hidden {
+    display: none;
+  }
+
+  /* Style for the CAPTCHA container */
+  #captchaContainer {
+  display: none; /* Hidden by default */
+  margin-top: -140px; /* Spacing between the verify button and the CAPTCHA container */
+  background-color: #fff; /* Optional: background color for the CAPTCHA container */
+   /* Padding inside the container */
+  border-radius: 4px; /* Optional: if you want rounded corners */
+  text-align: center; /* Center the content */
+
+  
+}
+
+  /* CAPTCHA image simulation */
+  #captchaContainer img {
+    width: 100%; /* Adjust as needed */
+    height: auto; /* Adjust as needed */
+    max-width: 500px; /* Adjust as needed */
+    border: 1px solid #ccc; /* Simple border for the image */
+    margin-bottom: 20px;
+  }
+
+  
+  
+ 
+  .checkbox-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none; /* Safari */
+    font-size: 14px; 
+  }
+  
+  .checkbox-label {
+    margin-left: 8px;
+  }
+  .verification-box, .captcha-container {
+    margin: 50px auto; /* Centering in the page */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items within the box */
+  }
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 4px;
+  }
+  
+  /* When the checkbox is checked */
+  .checkbox-container input:checked ~ .checkmark {
+    background-color: #2196F3;
+  }
+  .checkbox-container:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+
+  
+  .checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  
+  .captcha-container {
+    display: none; /* Start hidden, display on checkbox toggle */
+    position: absolute; /* Position absolutely within the relative parent */
+     /* Adjust these values as needed to position the container */
+    left: 65%;
+    top: 50%;
+    transform: translateX(-50%); /* Center horizontally relative to the parent */
+    z-index: 100; /* Ensure it's above the verification-box */
+    background-color: #fff; /* Use a background to make it stand out */
+    padding: 20px;
+    border-radius: 5px; /* Optional, for styled corners */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Optional, for a drop shadow effect */
+    /* Add width, max-width, or other styling as needed */
+  }
+
+  .container {
+    max-width: 400px; /* Adjust the maximum width as needed */
+    margin: 20px auto;
+    position: relative;
+  }
+
+  input {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    padding: 8px;
+  }
+
+  .image-container {
+    
+    gap: 5px; /* Adjust the gap between images */
+    
+  }
+
+  img {
+    flex: 1;
+    max-width: 50%; /* Ensure images don't exceed their container's width */
+    height: auto; 
+  }
+  
+  hr {
+    border: 1px solid #ccc; /* Adjust the color of the hr */
+    margin: 10px 0;
+  }
+
+  .button-container {
+    position: relative;
+    bottom: 0;
+    right: 0;
+  }
+
+  .button_captcha {
+    padding: 10px;
+    background-color: #003366; /* Adjust the background color */
+    color: white;
+    border: none;
+    width: 100px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 200px;;
+  }
+
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  

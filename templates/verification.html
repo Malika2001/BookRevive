@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verification Box</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WySkL73Nep5I9kFfE53ZJz48UyHymIbbVb" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvM4F9CdHJ" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WySkL73Nep5I9kFfE53ZJz48UyHymIbbVb" crossorigin="anonymous"></script>
+
+<link href="/assets/css/main.css" rel="stylesheet">
+<link href="/assets/css/verification.css" rel="stylesheet">
+
+</head>
+<body>
+  <!-- Your button to trigger the modal -->
+<button id="showModalBtn">Open Modal</button>
+
+<!-- Your modal structure -->
+<div id="Modal" class="modal">
+  <!-- Content of your verification-box and captcha-container -->
+  <div class="verification-box">
+    <div class="circle-large"></div>
+    <div class="circle-small"></div>
+    <div class="triangle"></div>
+    
+    <div class="verify-button">
+  
+      <input type="checkbox"  id="_checkbox"  class="checkbox"  class="real-checkbox"  onchange="toggleCaptcha()">
+      <label for="_checkbox">
+        <div id="tick_mark"></div>
+      </label>
+      
+      <span style="font-family: 'Times New Roman', Times, serift; margin-right: 60px;
+      margin-left: 20px; font-size: 15px;">I'm not a Robot</span>
+      <div class="verify-image-container">
+          <div class="verify-image"></div>
+        </div>
+    </div>
+    <!-- Container for the title and paragraph at the bottom left -->
+    <div class="text-container">
+      <h1>reCaptcha Modern</h1>
+      <p>A new look to good old Captcha</p>
+    </div>
+  </div>
+
+  <!-- CAPTCHA container -->
+  <div id="captchaContainer" class="captcha-container">
+    <form action="{{ url_for('submit') }}" method="post">
+      <div >
+        <h5>Enter both text seperated by space  </h3>
+        <input type="text" name="input_text">
+        <br>
+        <div class="image-container">
+          <img src="/{{ known_image_path }}">
+          <img src="{{ unknown_image_path }}"> <!-- Make sure to use different image sources -->
+        </div>
+        <hr>
+      <br>
+        <div class="button-container">
+
+          <button>Verify</button>
+          
+        </div>
+      
+      </div>
+    </form>  
+</div>
+
+  
+  
+</body>
+
+<script>
+// script.js
+function toggleCaptcha() {
+  var captchaContainer = document.getElementById('captchaContainer');
+  if (document.getElementById('_checkbox').checked) {
+    captchaContainer.style.display = 'block';
+  } else {
+    captchaContainer.style.display = 'none';
+  }
+}
+
+</script>
+<script src="/assets/js/verification.js"></script>
+  
+</html>
