@@ -24,7 +24,7 @@ app.secret_key = 'Recaptcha'
 
 
 def extract_low_confidence_words(image_path):
-    pytesseract.pytesseract.tesseract_cmd =r'/usr/bin/tessecart'
+    pytesseract.pytesseract.tesseract_cmd =r'/usr/bin/tesseract'
     # Load the image using OpenCV
     image = cv2.imread(image_path)
     if image is None:
