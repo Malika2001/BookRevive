@@ -138,7 +138,7 @@ def challenge():
     img_data = None
     docx_filename = None  # Initialize to None
 
-    pytesseract.pytesseract.tesseract_cmd =r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+    pytesseract.pytesseract.tesseract_cmd =r'/usr/bin/tesseract'
 
 
     # Check if the temp directory exists, create if not
